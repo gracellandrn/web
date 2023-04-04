@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Silamp</title>
+
+    <!-- Favicon -->
+    <!-- <link rel="shortcut icon" href="../../assets/images/favicon.ico" /> -->
+
+    <!-- Library / Plugin Css Build -->
+    <link rel="stylesheet" href="../../assets/css/libs.min.css">
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="../../assets/css/logik.css?v=1.0.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body class=" ">
+    <!-- loader Start -->
+    <div id="loading">
+        <div class="loader simple-loader">
+            <div class="loader-body"></div>
+        </div>
+    </div>
+    <!-- loader END -->
+
+    <div class="wrapper">
+        <div class="robot">
+            <div class="container h-100">
+                <div class="row align-items-center justify-content-center h-100">
+                    <div class="col-lg-5 col-md-8">
+                        <div class="card" style="transform: translate(0px, 25px);">
+                            <div class="card-header">
+                                <h2>Silamp</h2>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="text-start mb-4">Welcome, sign in and get started.</h5>
+                                <p id="error-msg"></p>
+                                <form id="login-form">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" id="email"
+                                                    aria-describedby="email" placeholder="Email address">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" id="password"
+                                                    aria-describedby="password" placeholder="Password ">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 d-flex justify-content-between mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                <label class="form-check-label" for="customCheck1">Remember Me</label>
+                                            </div>
+                                            <a href="#" class="text-dark">Forget Password?</a>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary text-white w-100 my-3">Sign
+                                        in</button>
+                                    <p class="text-center text-dark my-3">
+                                        Don’t have an account? <a href="sign-up.html"
+                                            class="text-secondary text-decoration-underline">Click here to sign up.</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="auth-img">
+                            <img src="../../assets/images/auth/01.png" alt="page" class="signin-outer-img w-25">
+                            <img src="../../assets/images/auth/03.png" alt="robot" class="signin-robot-img w-25 me-n5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backend Bundle JavaScript -->
+    <script src="../../assets/js/libs.min.js"></script>
+
+    <!-- Dashboard Charts JavaScript -->
+    <script src="../../assets/js/charts/dashboard.js"></script>
+    <script src="../../assets/js/charts/apexcharts.js"></script>
+
+    <!-- fslightbox JavaScript -->
+    <script src="../../assets/js/fslightbox.js"></script>
+
+    <!-- app JavaScript -->
+    <script src="../../assets/js/app.js"></script>
+
+    <script src="../../assets/js/login.js"></script>
+
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyA7Zdl941vO5STGC-zwdNZhFmnQmBM7A1w",
+            authDomain: "sistemlampu.firebaseapp.com",
+            databaseURL: "https://sistemlampu-default-rtdb.firebaseio.com",
+            projectId: "sistemlampu",
+            storageBucket: "sistemlampu.appspot.com",
+            messagingSenderId: "815493702041",
+            appId: "1:815493702041:web:146ed004ce45ec49067308"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+     // firebase.analytics();
+    </script>
+</body>
+
+</html>
