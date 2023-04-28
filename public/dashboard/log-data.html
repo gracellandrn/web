@@ -7,17 +7,19 @@
     <title>Silamp</title>
 
     <!-- Favicon -->
-    <!-- <link rel="shortcut icon" href="../assets/images/favicon.ico" /> -->
+    <!-- <link rel="shortcut icon" href="../../assets/images/favicon.ico" /> -->
 
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="../assets/css/libs.min.css">
 
     <!-- Custom Css -->
     <link rel="stylesheet" href="../assets/css/logik.css?v=1.0.0">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase.js"></script>
     <script src="../assets/js/lampu.js"></script>
+
 
     <script>
         firebase.auth().onAuthStateChanged(function (user) {
@@ -27,6 +29,12 @@
             }
         });
     </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
 </head>
 
 <body class="  ">
@@ -65,7 +73,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">
+                        <a class="nav-link " aria-current="page" href="index.html">
                             <i class="icon">
                                 <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -89,7 +97,6 @@
                             <span class="item-name">Dashboard</span>
                         </a>
                     </li>
-
                     <li class="nav-item static-item">
                         <a class="nav-link static-item disabled" href="#" tabindex="-1">
                             <span class="default-icon text-primary">Pages</span>
@@ -97,7 +104,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="kendali.html">
+                        <a class="nav-link" href="kendali.html">
                             <i class="icon">
                                 <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -112,7 +119,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="log-data.html">
+                        <a class="nav-link active" href="log-data.html">
                             <i class="icon">
                                 <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -131,7 +138,6 @@
                             <span class="item-name">Log Data</span>
                         </a>
                     </li>
-
                 </ul>
                 <!-- Sidebar Menu End -->
             </div>
@@ -166,7 +172,6 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="align-items-center navbar-nav ms-auto navbar-list mb-2 mb-lg-0">
-
                             <li class="nav-item dropdown">
                                 <a class="nav-link py-0 d-flex align-items-center" href="#" id="navbarDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -188,103 +193,52 @@
             </nav>
             <!--Nav End-->
         </div>
-        <div class="iq-navbar-header" style="height: 215px;">
-            <div class="iq-container">
-                <div>
-                    <h1>Smart Lamp</h1>
-                    <p>The light system creates a feeling of calm and comfort for homeowners</p>
-                </div>
+        <div class="conatiner-fluid content-inner mt-5 py-0 mb-4">
+            <div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="header-title">
+                                    <h4 class="card-title">Log Data</h4>
+                                </div>
+                            </div>
+                            <div class="card-body px-0">
+                                <div class="table-responsive">
+                                    <table id="tablaProductos" class="table table-striped" role="grid">
+                                        <thead>
+                                            <tr class="ligth">
+                                                <th>Nomor</th>
+                                                <th>Tanggal</th>
+                                                <th>Waktu</th>
+                                                <th>Teras Rumah</th>
+                                                <th>Ruang Tamu</th>
+                                                <th>Kamar Utama</th>
+                                                <th>Kamar Kedua</th>
+                                                <th>Dapur</th>
+                                                <th>Toilet</th>
+                                                <th style="min-width: 100px">Hapus</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
-
-            </div>
-            <div class="iq-header-img">
-                <img src="../assets/images/dashboard/top-header4.png" alt="header"
-                    class="theme-color-yellow-img img-fluid w-100 h-100 animated-scaleX">
-            </div>
-        </div>
-        <div class="conatiner-fluid content-inner mt-n5 py-0">
-            <div class="row">
-                <div class="d-flex align-items-center justify-content-between flex-wrap mb-4">
-                    <div class="col-md-12 col-lg-12">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Teras Rumah</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <small id="statuslampu_teras"></small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Ruang Tamu</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <small id="statuslampu_ruangtamu"></small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Dapur </h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <small id="statuslampu_dapur"></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-12">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Kamar Utama</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <small id="statuslampu_kamarutama"></small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Kamar Kedua</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <small id="statuslampu_kamarkedua"></small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5>Toilet </h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <small id="statuslampu_toilet"></small>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- Footer Section Start -->
         <footer class="footer border-top">
             <div class="footer-body">
                 <ul class="left-panel list-inline mb-0 p-0">
-                    <li class="list-inline-item"><a href="../dashboard/extra/privacy-policy.html">
-                        </a>
+                    <li class="list-inline-item"><a href="../../dashboard/extra/privacy-policy.html"></a>
                     </li>
-                    <li class="list-inline-item"><a href="../dashboard/extra/terms-of-service.html">
-                        </a>
+                    <li class="list-inline-item"><a href="../../dashboard/extra/terms-of-service.html"></a>
                     </li>
                 </ul>
                 <div class="right-panel">
@@ -302,8 +256,8 @@
                 </div>
             </div>
         </footer>
-        <!-- Footer Section End -->
 
+        <!-- Footer Section End -->
     </main>
     <!-- Wrapper End-->
     <!-- offcanvas start -->
@@ -321,30 +275,30 @@
     <!-- app JavaScript -->
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/logout.js"></script>
+    <script type="text/javascript" src="../assets/js/data.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
 
 
-    <!-- firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
 
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyA7Zdl941vO5STGC-zwdNZhFmnQmBM7A1w",
-            authDomain: "sistemlampu.firebaseapp.com",
-            databaseURL: "https://sistemlampu-default-rtdb.firebaseio.com",
-            projectId: "sistemlampu",
-            storageBucket: "sistemlampu.appspot.com",
-            messagingSenderId: "815493702041",
-            appId: "1:815493702041:web:146ed004ce45ec49067308"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-     // firebase.analytics();
-    </script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script> -->
+
+
+
+
+
 </body>
 
 </html>

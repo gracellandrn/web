@@ -213,7 +213,7 @@ if (jQuery(".data-scrollbar").length) {
 
 /*---------------------------------------------------------------------
   Data tables
------------------------------------------------------------------------*/
+// -----------------------------------------------------------------------*/
 if($.fn.DataTable){
   if($('[data-toggle="data-table"]').length) {
     const table = $('[data-toggle="data-table"]').DataTable({
@@ -453,3 +453,4 @@ radioBtns.forEach(function(radioBtn) {
     }
   });
 });
+

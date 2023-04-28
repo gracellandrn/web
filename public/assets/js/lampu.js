@@ -41,7 +41,7 @@ var firebaseConfig = {
   (function (){
     firebase.database().ref('kontrol').child('dapur').on('value', function (data) {
       var sensor = data.val();
-      if (sensor == 1) {
+      if (sensor == "hidup") {
         $("#statuslampu_dapur").text("ON");
         document.getElementById('statuslampu_dapur');
       } else {
@@ -53,7 +53,7 @@ var firebaseConfig = {
   (function (){
     firebase.database().ref('kontrol').child('kamarKedua').on('value', function (data) {
       var sensor = data.val();
-      if (sensor == 1) {
+      if (sensor == "hidup") {
         $("#statuslampu_kamarkedua").text("ON");
         document.getElementById('statuslampu_kamarkedua');
       } else {
@@ -65,7 +65,7 @@ var firebaseConfig = {
   (function (){
     firebase.database().ref('kontrol').child('kamarUtama').on('value', function (data) {
       var sensor = data.val();
-      if (sensor == 1) {
+      if (sensor == "hidup") {
         $("#statuslampu_kamarutama").text("ON");
         document.getElementById('statuslampu_kamarutama');
       } else {
@@ -77,7 +77,7 @@ var firebaseConfig = {
   (function (){
     firebase.database().ref('kontrol').child('ruangTamu').on('value', function (data) {
       var sensor = data.val();
-      if (sensor == 1) {
+      if (sensor == "hidup") {
         $("#statuslampu_ruangtamu").text("ON");
         document.getElementById('statuslampu_ruangtamu');
       } else {
@@ -89,7 +89,7 @@ var firebaseConfig = {
   (function (){
     firebase.database().ref('kontrol').child('teras').on('value', function (data) {
       var sensor = data.val();
-      if (sensor == 1) {
+      if (sensor == "hidup") {
         $("#statuslampu_teras").text("ON");
         document.getElementById('statuslampu_teras');
       } else {
@@ -101,7 +101,7 @@ var firebaseConfig = {
   (function (){
     firebase.database().ref('kontrol').child('toilet').on('value', function (data) {
       var sensor = data.val();
-      if (sensor == 1) {
+      if (sensor == "hidup") {
         $("#statuslampu_toilet").text("ON");
         document.getElementById('statuslampu_toilet');
       } else {
@@ -138,3 +138,101 @@ var firebaseConfig = {
         document.getElementById('menitoff').innerHTML = "<h4 style='color: white'>" + Menit + " " + "WIB" + "</h4>"
       });
       }());
+
+// tampil teras
+$(document).ready(function(){
+  var database = firebase.database();
+  var teras1;
+  
+  database.ref('kontrol').on("value", function(snap){
+    teras1 = snap.val().teras;
+    kamarUtama1 = snap.val().kamarUtama;
+    kamarKedua1 = snap.val().kamarKedua;
+    dapur1 = snap.val().dapur;
+    ruangTamu1 = snap.val().ruangTamu;
+    toilet1 = snap.val().toilet;
+
+    if(teras1 == "hidup"){
+        document.getElementById("off1").style.display = "none";
+        document.getElementById("on1").style.display = "block";
+      } else {
+        document.getElementById("off1").style.display = "block";
+        document.getElementById("on1").style.display = "none";
+    }
+  });
+  
+  $(".to").click(function(){
+  var firebaseRef = firebase.database().ref('kontrol').child("teras");
+
+  if(teras1 == "hidup"){    // post to firebase
+    firebaseRef.set("mati");
+    teras1 = "mati";
+    var key = database.ref().child('Data').push().key;
+    database.ref('Data/'+key+'/dapur').set(dapur);
+    database.ref('Data/'+key+'/kamarKedua').set(kamarKedua);
+    database.ref('Data/'+key+'/kamarUtama').set(kamarUtama);
+    database.ref('Data/'+key+'/ruangTamu').set(ruangTamu);
+    database.ref('Data/'+key+'/teras').set(teras);
+    database.ref('Data/'+key+'/toilet').set(toilet);
+  } else {
+    firebaseRef.set("hidup");
+    teras1 = "hidup";
+    var key = database.ref().child('Data').push().key;
+    database.ref('Data/'+key+'/dapur').set(dapur);
+    database.ref('Data/'+key+'/kamarKedua').set(kamarKedua);
+    database.ref('Data/'+key+'/kamarUtama').set(kamarUtama);
+    database.ref('Data/'+key+'/ruangTamu').set(ruangTamu);
+    database.ref('Data/'+key+'/teras').set(teras);
+    database.ref('Data/'+key+'/toilet').set(toilet);
+  }
+})
+});
+
+//ruang tamu
+$(document).ready(function(){
+  var database = firebase.database();
+  var ruangTamu2;
+  
+  database.ref('kontrol').on("value", function(snap){
+    teras2 = snap.val().teras;
+    kamarUtama2 = snap.val().kamarUtama;
+    kamarKedua2 = snap.val().kamarKedua;
+    dapur2 = snap.val().dapur;
+    ruangTamu2 = snap.val().ruangTamu;
+    toilet2 = snap.val().toilet;
+
+    if(ruangTamu2 == "hidup"){
+        document.getElementById("off2").style.display = "none";
+        document.getElementById("on2").style.display = "block";
+      } else {
+        document.getElementById("off2").style.display = "block";
+        document.getElementById("on2").style.display = "none";
+    }
+  });
+  
+  $(".to").click(function(){
+  var firebaseRef = firebase.database().ref('kontrol').child("ruangTamu");
+
+  if(ruangTamu2 == "hidup"){    // post to firebase
+    firebaseRef.set("mati");
+    ruangTamu2 = "mati";
+    var key = database.ref().child('Data').push().key;
+    database.ref('Data/'+key+'/dapur').set(dapur);
+    database.ref('Data/'+key+'/kamarKedua').set(kamarKedua);
+    database.ref('Data/'+key+'/kamarUtama').set(kamarUtama);
+    database.ref('Data/'+key+'/ruangTamu').set(ruangTamu);
+    database.ref('Data/'+key+'/teras').set(teras);
+    database.ref('Data/'+key+'/toilet').set(toilet);
+  } else {
+    firebaseRef.set("hidup");
+    ruangTamu2 = "hidup";
+    var key = database.ref().child('Data').push().key;
+    database.ref('Data/'+key+'/dapur').set(dapur);
+    database.ref('Data/'+key+'/kamarKedua').set(kamarKedua);
+    database.ref('Data/'+key+'/kamarUtama').set(kamarUtama);
+    database.ref('Data/'+key+'/ruangTamu').set(ruangTamu);
+    database.ref('Data/'+key+'/teras').set(teras);
+    database.ref('Data/'+key+'/toilet').set(toilet);
+  }
+})
+});
